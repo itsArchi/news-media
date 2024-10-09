@@ -146,6 +146,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="newsIndex">News Index</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/read-later">News Saved</a>
+                            </li>
                         </ul>
                         <div class="nav-search ml-auto d-none d-lg-block">
                             <span id="search">

@@ -728,6 +728,15 @@ a[href^=tel] {
 
 /* 3. TRANDING NEWS
 ================================================== */
+.btn-save {
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.btn-save:hover {
+  background-color: #141f9b;
+}
+
 .trending-bar-dark {
   background: #292931;
   color: #fff;

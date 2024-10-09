@@ -118,6 +118,12 @@
                                         <div class="post-meta">
                                             <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$news->created_at}}</span>
                                         </div>
+                                        <form action="/save-later/{{$news->id}}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-primary btn-save">
+                                                <i class="fa fa-bookmark"></i> Save for Later
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                                 @endforeach
@@ -126,77 +132,10 @@
                     </div>
                 </div>
 			</div>
-			<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-				<div class="sidebar">
-					<div class="widget">
-                        <h3 class="news-title">
-                            <span>Stay in touch</span>
-                        </h3>
-
-                        <ul class="list-inline social-widget">
-                            <li class="list-inline-item">
-                                <a class="social-page youtube" href="#">
-                                    <i class="fa fa-play"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="social-page facebook" href="#">
-                                <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="social-page twitter" href="#">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="social-page pinterest" href="#">
-                                    <i class="fa fa-pinterest"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="social-page linkedin" href="#">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                            </li>
-                        
-                            <li class="list-inline-item">
-                                <a class="social-page youtube" href="#">
-                                    <i class="fa fa-youtube"></i>
-                                </a>
-                            </li>
-                        </ul>
-
-                    </div>
-                        <div class="widget">
-                            <h3 class="news-title">
-                                <span>Hot News</span>
-                            </h3>
-
-                            <div class="post-list-block">
-                                @foreach ($list_featured_news as $news)
-                                <div class="post-block-wrapper post-float ">
-                                    <div class="post-thumbnail">
-                                        <a href="/detail/{{$news->id}}">
-                                            <img class="img-fluid" src="/image/{{$news->image}}" alt="post-thumbnail"/>
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title title-sm">
-                                            <a href="/detail/{{$news->id}}">{{$news->news_title}}</a>
-                                        </h2>
-                                        <div class="post-meta">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-1"></i>{{$news->created_at}}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-				</div>
-			</div>
 		</div>
 	</div>
 </section>
+
+
+
 @endsection

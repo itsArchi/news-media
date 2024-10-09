@@ -5,6 +5,8 @@ use App\Http\Controllers\adminNewsController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\frontendController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReadLaterController;
+
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -34,3 +36,8 @@ Route::post('/admin/news/update/{id}', [adminNewsController:: class, 'update']);
 Route::get('/admin/news/delete/{id}', [adminNewsController:: class, 'delete']);
 Route::get('/admin/news/set-headline/{status}/{id}', [adminNewsController:: class, 'set_headline']);
 Route::get('/admin/news/set-featured-news/{status}/{id}', [adminNewsController:: class, 'set_featured_news']);
+
+
+Route::post('/save-later/{newsId}', [ReadLaterController::class, 'save'])->name('save-later');
+Route::get('/read-later', [ReadLaterController::class, 'index'])->name('read.later');
+Route::delete('/read-later/{id}', [ReadLaterController::class, 'destroy'])->name('readlater.delete');
